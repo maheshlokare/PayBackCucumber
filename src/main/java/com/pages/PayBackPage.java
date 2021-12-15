@@ -33,8 +33,6 @@ public class PayBackPage extends base {
 	@AndroidFindBy(xpath = "//android.widget.Button[@text='Login']")
 	private WebElement loginButton;
 	
-	
-	
 	@AndroidFindBy(xpath = "//android.widget.TextView[@text='Partner erkunden']")
 	private AndroidElement partnerErkunden;
 	
