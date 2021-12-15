@@ -24,10 +24,13 @@ public class PayBackStep {
 	public void user_logins_into_payback_application() throws InterruptedException {
 		paybackPage = new PayBackPage();
 		letsWait();
+		// Here we have to perform login action manually because of security issues we can automate this
 		paybackPage.clickOnLoginButton();
+		System.out.println("Please perform the login manually as we cant automate this step because of security reasons");
 		
 	}
 	
+	@Given("user clicks on coupons")
 	public void user_clicks_on_coupons() {
 		paybackPage.clickPartnerErkunden();
 		paybackPage.navigateUp();

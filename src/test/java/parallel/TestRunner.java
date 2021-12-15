@@ -12,7 +12,7 @@ import io.cucumber.testng.CucumberOptions;
 				}, 
 		dryRun = false,
 		monochrome = true,
-		glue = { "stories" },
+		glue = { "parallel" },
 				features = { "./src/test/resources/stories/Payback/PayBackEnd2End.feature" 
 					}
 )

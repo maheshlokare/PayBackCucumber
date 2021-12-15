@@ -20,7 +20,6 @@ public class base {
 	public static AndroidDriver capabilities() {
 		try {
 			
-			
 			DesiredCapabilities capabilities = new DesiredCapabilities();
 			
 			capabilities.setCapability(MobileCapabilityType.AUTOMATION_NAME, "uiautomator2");
