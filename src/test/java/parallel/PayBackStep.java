@@ -4,17 +4,10 @@ import org.testng.Assert;
 
 import com.pages.PayBackPage;
 import com.qa.util.Constants;
-
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
-
-
-/**
- * @author mlokare
- * this class is used to specify steps specific to end2end 
- */
 public class PayBackStep {
 	
 	PayBackPage paybackPage ;
@@ -23,16 +16,16 @@ public class PayBackStep {
 	@Given("user logins into payback application")
 	public void user_logins_into_payback_application() throws InterruptedException {
 		paybackPage = new PayBackPage();
-		letsWait();
-		// Here we have to perform login action manually because of security issues we can automate this
-		paybackPage.clickOnLoginButton();
-		System.out.println("Please perform the login manually as we cant automate this step because of security reasons");
 		
+		paybackPage.clickOnLoginButton();
+		Thread.sleep(15000); //Currently we are doing manual login due to security issues. So we placed a small sleep for manual login.
 	}
 	
+	//Below steps follow after the login
 	@Given("user clicks on coupons")
 	public void user_clicks_on_coupons() {
 		paybackPage.clickPartnerErkunden();
+		//click on back arrow-page3
 		paybackPage.navigateUp();
 		paybackPage.clickCoupons();
 	}
@@ -79,10 +72,6 @@ public class PayBackStep {
 	
 	@Then("verify not activated cards number is reduced by one")
 	public void verify_not_activated_cards_number_is_reduced_by_one() {
-	}
-	
-	public void letsWait() throws InterruptedException {
-		Thread.sleep(15000); 
 	}
 
 
